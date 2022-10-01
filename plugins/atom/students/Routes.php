@@ -1,22 +1,9 @@
 <?php
 
 use Atom\Students\Models\Student;
+use Carbon\Carbon;
+use Atom\Students\Http\Controllers\AdminController;
 
-Route::get('/api/get/all', function() {
-    return Student::all();
-});
+Route::get('/api/arrivals', [AdminController::class, 'arrivals']);
 
-Route::get('/api/new-arrival', function() {
-
-    date_default_timezone_set('Europe/Bratislava');
-    $datetime = date('Y-m-d H:i:s'); 
-
-    $Student = new Student;
-    $Student->fill(input());
-    $Student->arrival_date = $datetime;
-    $Student->timestamps = $datetime;
-    $Student->save(); 
-
-    return "Arivall added $Student";
-    
-});
+Route::post('/api/arrivals', [AdminController::class, 'newArrival']);

@@ -53,6 +53,7 @@ class Student extends Model
      * @var array Attributes to be cast to Argon (Carbon) instances
      */
     protected $dates = [
+        'arrival_date',
         'created_at',
         'updated_at'
     ];

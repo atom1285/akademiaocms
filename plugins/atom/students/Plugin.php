@@ -40,7 +40,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-
+        date_default_timezone_set('Europe/Bratislava');
     }
 
     /**
