@@ -2,7 +2,8 @@
 
 use Backend;
 use System\Classes\PluginBase;
-use Atom\FaceRecogniton\Classes\Extend\StudentExtend;
+use Atom\FaceRecognition\Classes\Extend\StudentExtend;
+use Atom\FaceRecognition\StudentTest;
 
 /**
  * faceRecognition Plugin Information File
@@ -41,7 +42,9 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        StudentExtend::afterSave();
+        //dd(class_exists("Atom\FaceRecognition\StudentTest"));
+        //StudentTest::afterSave();
+        StudentExtend::afterSave_echoCurrentDate();
     }
     /**
      * Registers any front-end components implemented in this plugin.
