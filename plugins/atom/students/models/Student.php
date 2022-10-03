@@ -65,7 +65,11 @@ class Student extends Model
     public $hasMany = [];
     public $hasOneThrough = [];
     public $hasManyThrough = [];
-    public $belongsTo = [];
+
+    public $belongsTo = [
+        'user' => \Rainlab\User\Models\User::class,
+    ];
+
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

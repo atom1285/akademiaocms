@@ -8,10 +8,6 @@ use Carbon\Carbon;
 class AdminController extends Controller 
 {
 
-    public function hello() {
-        return 'hello there';
-    }
-
     public function arrivals() {
         return Student::all();
     }
