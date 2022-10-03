@@ -38,7 +38,7 @@ class User extends UserBase
     ];
 
     public $hasMany = [
-        'students' => \Atom\Students\Models\Student::class,
+        'students' => ['Atom\Students\Models\Student']
     ];
 
     public $attachOne = [

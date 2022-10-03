@@ -35,11 +35,6 @@ class Users extends Controller
     public $listConfig = 'config_list.yaml';
 
     /**
-     * @var array `RelationController` configuration, by extension.
-     */
-    public $relationConfig;
-
-    /**
      * @var array Permissions required to view this page.
      */
     public $requiredPermissions = ['rainlab.users.access_users'];

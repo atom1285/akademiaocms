@@ -15,7 +15,7 @@ class StudentExtend{
                 
                 date_default_timezone_set('Europe/Bratislava');
 
-                echo now().'<br>';
+                // echo now().'<br>';
             });
         } );
 

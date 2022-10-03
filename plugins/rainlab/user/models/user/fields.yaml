@@ -12,6 +12,12 @@ fields:
         label: rainlab.user::lang.user.surname
         span: auto
 
+    students:
+        label: Arrivals
+        type: relation
+        select: arrival_date
+        tab: Arrivals
+
 tabs:
     fields:
 

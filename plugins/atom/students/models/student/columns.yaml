@@ -6,12 +6,12 @@ columns:
     id:
         label: ID
         searchable: true
-    user_id:
-        label: User ID
-        searchable: true
     name:
         label: Name
         searchable: true
     arrival_date:
         label: Time of arrival
-    
+    user:
+        label: User
+        relation: user
+        select: name

@@ -67,7 +67,7 @@ class Student extends Model
     public $hasManyThrough = [];
 
     public $belongsTo = [
-        'user' => \Rainlab\User\Models\User::class,
+        'user' => ['Rainlab\User\Models\User'],
     ];
 
     public $belongsToMany = [];
