@@ -1,14 +1,16 @@
 <?php
 
-use Atom\Students\Http\Controllers\AdminController;
+use Atom\Students\Http\Controllers\UserController;
 
 Route::group(['prefix' => 'api'], function() {
 
-    Route::get('/arrivals', [AdminController::class, 'arrivals']);
+    Route::get('/arrivals', [UserController::class, 'arrivals']);
     
     Route::middleware(['auth'])->group (function() {
-        Route::post('/arrivals', [AdminController::class, 'newArrival']);
+
+        Route::get('/myarrivals', [UserController::class, 'myArrivals']);
+
+        Route::post('/arrivals', [UserController::class, 'newArrival']);
     });
     
-    Route::post('/login', [AdminController::class, 'logIn']);
 });

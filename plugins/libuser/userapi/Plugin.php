@@ -6,7 +6,6 @@ use Tymon\JWTAuth\Http\Middleware\Authenticate;
 use Illuminate\Contracts\Auth\Factory;
 use System\Classes\PluginBase;
 use Tymon\JWTAuth\Providers\LaravelServiceProvider;
-use RainLab\User\Models\User;
 
 /**
  * Userapi Plugin Information File

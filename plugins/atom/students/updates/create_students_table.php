@@ -12,7 +12,7 @@ class CreateStudentsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->default(1);
             $table->string('name');
-            $table->integer('user_id')->nullable();
+            $table->integer('user_id')->nullable()->index();
             $table->dateTime('arrival_date');
             $table->timestamps();
         });

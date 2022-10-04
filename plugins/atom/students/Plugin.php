@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Event;
 
 /**
  * Students Plugin Information File
