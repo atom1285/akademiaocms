@@ -40,8 +40,8 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        // now()->setTimezone('Europe/Bratislava');
-        // date_default_timezone_set('Europe/Bratislava');
+        now()->setTimezone('Europe/Bratislava');
+        date_default_timezone_set('Europe/Bratislava');
     }
 
     /**

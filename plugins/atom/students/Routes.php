@@ -2,6 +2,13 @@
 
 use Atom\Students\Http\Controllers\AdminController;
 
-Route::get('/api/arrivals', [AdminController::class, 'arrivals']);
+Route::group(['prefix' => 'api'], function() {
 
-Route::post('/api/arrivals', [AdminController::class, 'newArrival']);
+    Route::get('/arrivals', [AdminController::class, 'arrivals']);
+    
+    Route::middleware(['auth'])->group (function($request) {
+        Route::post('/arrivals', [AdminController::class, 'newArrival']);
+    });
+    
+    Route::post('/login', [AdminController::class, 'logIn']);
+});
