@@ -13,12 +13,12 @@ class UserController extends Controller
 {
 
     public function arrivals() {
-        // return Arrival::all();
 
         return UserResource::collection( Arrival::all() );
     }
     
     public function myArrivals() {
+        
         Event::fire('UserRequestedArrivals');
         
         $data = Arrival::where('user_id', auth()->user()->id)->orderBy('id')->get();
@@ -35,7 +35,7 @@ class UserController extends Controller
         $Arrival->timestamps = now();
 
         $Arrival->save(); 
-
-        return $Arrival;
+        
+        return UserResource::make( $Arrival );
     }
 }

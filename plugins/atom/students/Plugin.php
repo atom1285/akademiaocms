@@ -46,6 +46,8 @@ class Plugin extends PluginBase
         date_default_timezone_set('Europe/Bratislava');
 
         UserExtend::extendUser_AddArrivals();
+        UserExtend::extendUser_AddColumns();
+        UserExtend::extendUser_AddFields();
     }
 
     /**
