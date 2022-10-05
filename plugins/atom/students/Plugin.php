@@ -3,6 +3,7 @@
 use Backend;
 use System\Classes\PluginBase;
 use Event;
+use Atom\Students\Classes\Extend\UserExtend;
 
 /**
  * Students Plugin Information File
@@ -43,6 +44,8 @@ class Plugin extends PluginBase
     {
         now()->setTimezone('Europe/Bratislava');
         date_default_timezone_set('Europe/Bratislava');
+
+        UserExtend::extendUser_AddArrivals();
     }
 
     /**

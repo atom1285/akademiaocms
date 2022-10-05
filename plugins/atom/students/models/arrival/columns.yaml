@@ -4,14 +4,14 @@
 
 columns:
     id:
-        label: ID
+        label: Arrival ID
         searchable: true
     name:
-        label: Name
+        label: Student name
         searchable: true
     arrival_date:
         label: Time of arrival
     user:
         label: User
         relation: user
-        select: name
+        select: concat(name, ' - ', email)

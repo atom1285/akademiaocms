@@ -48,8 +48,9 @@ columns:
         label: rainlab.user::lang.user.last_ip_address
         searchable: true
         invisible: true
-
-    students:
-        label: Arrivals
-        relation: students
-        select: arrival_date
+    
+    arrival:
+        label: Last Arrival
+        invisible: false
+        relation: arrivals
+        select: id

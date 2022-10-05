@@ -3,10 +3,10 @@
 # ===================================
 
 # Model List Column configuration
-list: $/atom/students/models/student/columns.yaml
+list: $/atom/students/models/arrival/columns.yaml
 
 # Model Class name
-modelClass: Atom\Students\Models\Student
+modelClass: Atom\Students\Models\Arrival
 
 # List Title
 title: Manage Students

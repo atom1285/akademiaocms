@@ -3,16 +3,17 @@
 use Model;
 
 /**
- * student Model
+ * Arrival Model
  */
-class Student extends Model
+class Arrival extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Sortable;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'atom_students_students';
+    public $table = 'atom_students_arrivals';
 
     /**
      * @var array Guarded fields

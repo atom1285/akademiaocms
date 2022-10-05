@@ -37,9 +37,9 @@ class User extends UserBase
         'groups' => [UserGroup::class, 'table' => 'users_groups']
     ];
 
-    public $hasMany = [
-        'students' => ['Atom\Students\Models\Student']
-    ];
+    public $hasOne = [];
+
+    public $hasMany = [];
 
     public $attachOne = [
         'avatar' => \System\Models\File::class

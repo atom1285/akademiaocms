@@ -3,13 +3,13 @@
 # ===================================
 
 # Record name
-name: Student
+name: Arrival
 
 # Model Form Field configuration
-form: $/atom/students/models/student/fields.yaml
+form: $/atom/students/models/arrival/fields.yaml
 
 # Model Class name
-modelClass: Atom\Students\Models\Student
+modelClass: Atom\Students\Models\Arrival
 
 # Default redirect location
 defaultRedirect: atom/students/students
