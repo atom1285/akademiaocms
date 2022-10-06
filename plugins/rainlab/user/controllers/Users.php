@@ -34,6 +34,8 @@ class Users extends Controller
      */
     public $listConfig = 'config_list.yaml';
 
+    public $relationConfig;
+
     /**
      * @var array Permissions required to view this page.
      */

@@ -1,0 +1,8 @@
+arrivals:
+
+  label: Arrivals
+  view:
+    list: $/atom/students/models/arrival/columns.yaml
+    toolbarButtons: create|add|remove
+  manage:
+    form: $/atom/students/models/arrival/fields.yaml

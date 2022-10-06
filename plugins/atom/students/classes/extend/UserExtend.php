@@ -3,6 +3,8 @@
 namespace Atom\Students\Classes\Extend;
 
 use RainLab\User\Models\User;
+use Rainlab\User\Controllers\Users as UsersController;
+use Atom\Students\Models\Arrival;
 use Event;
 
 class UserExtend{
@@ -11,13 +13,9 @@ class UserExtend{
         
         User::extend(function($model) {
             
-            // $user->hasOne = [
-            //     'firstarrival' => ['Atom\Students\Models\Arrival', 'order' => 'arrival_date'],
-            // ];
-            
             $model->hasMany['arrivals'] = [
                     'Atom\Students\Models\Arrival', 
-                    'order' => 'id desc'
+                    'order' => 'id'
                 ];    
             });
     }
@@ -67,11 +65,19 @@ class UserExtend{
                     'arrivals' => [
                         'label' => 'Arrivals',
                         'tab' => 'Arrivals',
-                        'type' => 'relation',
-                        'select' => 'arrival_date'
+                        'type' => 'partial',
+                        'path' => '$/atom/students/controllers/students/_field_arrivals.htm'
                     ]
                 ]);
         });
 
+    }
+
+    public static function extendUserController_AddRelationManager() {
+        UsersController::extend(function($controller) {
+
+            $controller->relationConfig = '$/atom/students/config/config_user_relation.yaml';
+            array_push($controller->implement, 'Backend.Behaviors.RelationController');
+        });
     }
 }

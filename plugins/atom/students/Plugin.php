@@ -48,6 +48,7 @@ class Plugin extends PluginBase
         UserExtend::extendUser_AddArrivals();
         UserExtend::extendUser_AddColumns();
         UserExtend::extendUser_AddFields();
+        UserExtend::extendUserController_AddRelationManager(); 
     }
 
     /**
