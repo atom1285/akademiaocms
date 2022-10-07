@@ -3,6 +3,7 @@
 use LibUser\Userapi\Http\Resources\UserResource;
 use Exception;
 use RainLab\User\Facades\Auth;
+use Event;
 
 class UserController {
 
@@ -16,6 +17,9 @@ class UserController {
             "password_confirmation" => post("password_confirmation")
         ];
         $user = Auth::register($creds);
+
+        // * my code:
+        Event::fire('user_registered', [$user]);
 
         return new UserResource($user);
     }

@@ -60,15 +60,29 @@ class UserExtend{
                 return;
             }
 
+            $uri = $_SERVER['REQUEST_URI'];
+            
             // Add an field
-            $fieldWidget->addFields([
+            if (strpos($uri, 'preview') !== false) {
+                $fieldWidget->addFields([
+                    'arrivals' => [
+                        'label' => 'Arrivals',
+                        'type' => 'partial',
+                        'path' => '$/atom/students/controllers/students/_field_arrivals_preview.htm',
+                        'tab' => 'Arrivals'
+                    ]
+                ]);
+            }
+            else {                
+                $fieldWidget->addFields([
                     'arrivals' => [
                         'label' => 'Arrivals',
                         'tab' => 'Arrivals',
                         'type' => 'partial',
                         'path' => '$/atom/students/controllers/students/_field_arrivals.htm'
-                    ]
-                ]);
+                        ]
+                    ]);
+                }
         });
 
     }

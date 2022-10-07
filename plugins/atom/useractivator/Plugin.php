@@ -1,12 +1,11 @@
-<?php namespace Atom\Students;
+<?php namespace Atom\Useractivator;
 
 use Backend;
 use System\Classes\PluginBase;
-use Event;
-use Atom\Students\Classes\Extend\UserExtend;
+use Atom\UserActivator\Classes\Extend\UserExtend;
 
 /**
- * Students Plugin Information File
+ * useractivator Plugin Information File
  */
 class Plugin extends PluginBase
 {
@@ -18,7 +17,7 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Students',
+            'name'        => 'useractivator',
             'description' => 'No description provided yet...',
             'author'      => 'atom',
             'icon'        => 'icon-leaf'
@@ -42,13 +41,8 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        now()->setTimezone('Europe/Bratislava');
-        date_default_timezone_set('Europe/Bratislava');
-
-        UserExtend::extendUser_AddArrivals();
-        UserExtend::extendUser_AddColumns();
-        UserExtend::extendUser_AddFields();
-        UserExtend::extendUserController_AddRelationManager(); 
+        UserExtend::afterUserRegister_generateActivationCode();
+        UserExtend::makeActivationCodeVisible();
     }
 
     /**
@@ -61,7 +55,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'Atom\Students\Components\MyComponent' => 'myComponent',
+            'Atom\Useractivator\Components\MyComponent' => 'myComponent',
         ];
     }
 
@@ -75,8 +69,8 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'atom.students.some_permission' => [
-                'tab' => 'Students',
+            'atom.useractivator.some_permission' => [
+                'tab' => 'useractivator',
                 'label' => 'Some permission'
             ],
         ];
@@ -89,13 +83,14 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
+        return []; // Remove this line to activate
 
         return [
-            'students' => [
-                'label'       => 'Student Arrivals',
-                'url'         => Backend::url('atom/students/students'),
+            'useractivator' => [
+                'label'       => 'useractivator',
+                'url'         => Backend::url('atom/useractivator/mycontroller'),
                 'icon'        => 'icon-leaf',
-                'permissions' => ['atom.students.*'],
+                'permissions' => ['atom.useractivator.*'],
                 'order'       => 500,
             ],
         ];
