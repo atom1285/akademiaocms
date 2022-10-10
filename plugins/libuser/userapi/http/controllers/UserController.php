@@ -19,7 +19,8 @@ class UserController {
         $user = Auth::register($creds);
 
         // * my code:
-        Event::fire('user_registered', [$user]);
+        Event::fire('libuser.userapi.afterRegister', [$user]);
+        // * end of my code
 
         return new UserResource($user);
     }

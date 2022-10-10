@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => 'smtp.mailgun.org',
+    'host' => 'smtp.mailtrap.io',
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'noreply@domain.tld',
-        'name' => 'OctoberCMS',
+        'address' => 'october@atom.sk',
+        'name' => 'October ATOM',
     ],
 
     /*
@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'username' => null,
+    'username' => '78ccb9c176a7bf',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +97,7 @@ return [
     |
     */
 
-    'password' => null,
+    'password' => '78ccb9c176a7bf',
 
     /*
     |--------------------------------------------------------------------------

@@ -95,4 +95,11 @@ class Plugin extends PluginBase
             ],
         ];
     }
+
+    public function registerMailTemplates()
+    {
+        return [
+            'activation' => 'atom.useractivator::mail.activation',
+        ];
+    }
 }

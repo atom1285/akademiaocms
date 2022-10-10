@@ -59,11 +59,9 @@ class UserExtend{
             if (!$fieldWidget->model instanceof \Rainlab\User\Models\User) {
                 return;
             }
-
-            $uri = $_SERVER['REQUEST_URI'];
             
             // Add an field
-            if (strpos($uri, 'preview') !== false) {
+            if ($fieldWidget->context == 'preview') {
                 $fieldWidget->addFields([
                     'arrivals' => [
                         'label' => 'Arrivals',
